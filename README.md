@@ -1,3 +1,5 @@
+# EXTENDED VERSION OF MLFLOW FOR MODEL MANAGEMENT AND EXPERIMENT TRACKING
+
 This project is a web-based dashboard built on top of MLflow to support experiment tracking, model comparison, and explainability. The system allows users to monitor logged experiments, identify the best-performing runs, and interpret model predictions using SHAP-based visualizations.
 
 The focus of this project is experiment analysis and explainability, rather than full deployment or model registry management.
@@ -111,3 +113,4 @@ Enhanced SHAP visualizations and interactivity
 
 📌 Academic Note
 This project was developed as part of a final-year academic submission. The focus is on experiment tracking, model comparison, and explainability, demonstrating practical machine learning system design and evaluation.
+
