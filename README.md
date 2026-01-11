@@ -1,118 +1,136 @@
 # EXTENDED VERSION OF MLFLOW FOR MODEL MANAGEMENT AND EXPERIMENT TRACKING
 
-This project is a web-based dashboard built on top of MLflow to support experiment tracking, model comparison, and explainability. The system allows users to monitor logged experiments, identify the best-performing runs, and interpret model predictions using SHAP-based visualizations.
+This project implements a lightweight web-based dashboard integrated with **MLflow** to support machine learning experiment tracking, run comparison, and model explainability.
 
-The focus of this project is experiment analysis and explainability, rather than full deployment or model registry management.
+The system was developed for **academic purposes** to demonstrate practical usage of MLflow for experiment analysis and to enhance model transparency through SHAP-based explanations.
 
-🚀 Features
-✅ Experiment Run Comparison
-Displays all logged MLflow runs for an experiment
+---
 
-Compares runs based on evaluation metrics
+## Project Overview
 
-Highlights the best-performing run
+The dashboard connects to an MLflow tracking server and allows users to:
+- View logged experiment runs
+- Compare model performance across runs
+- Identify the best-performing run based on evaluation metrics
+- Interpret model predictions using SHAP-inspired explainability
 
-Helps users analyze model performance differences
+The scope of the project focuses on **analysis and evaluation**, not full production deployment.
 
-✅ Model Explainability (SHAP)
-Visualizes SHAP-inspired feature importance
+---
 
-Supports global and local explainability
+## Implemented Features
 
-Helps understand how features influence predictions
+### 1. Experiment Run Comparison
+- Retrieves experiment runs logged in MLflow
+- Displays metrics for each run
+- Enables comparison between runs
+- Identifies the best-performing run based on selected metrics
 
-Integrated directly into the dashboard UI
+### 2. Model Explainability (SHAP)
+- Provides SHAP-inspired feature contribution analysis
+- Supports visualization of feature importance
+- Helps explain how input features influence model predictions
+- Integrated directly into the web dashboard
 
-⚠️ Note: Only run comparison and SHAP explainability were implemented as extended features in the web interface.
+> **Note:** Only *run comparison* and *SHAP explainability* were implemented as additional web-based features.
 
-🛠️ Tech Stack
-Backend / ML
+---
 
-Python
+## Technology Stack
 
-MLflow (experiment tracking)
+### Backend / Machine Learning
+- Python
+- MLflow (experiment tracking)
 
-Frontend
+### Frontend
+- HTML
+- CSS
+- JavaScript
 
-HTML, CSS, JavaScript
+### Explainability
+- SHAP-inspired feature contribution analysis
 
-Explainability
+### Utilities
+- Python HTTP server
+- CORS proxy for API communication
 
-SHAP-inspired feature contribution analysis
+---
 
-Server / Utilities
+## Project Structure
 
-Python HTTP server
-
-CORS proxy for API communication
-
-📂 Project Structure (Simplified)
 ├── cors_proxy.py
 ├── frontend/
-│   ├── index.html
-│   ├── css/
-│   └── js/
-├── mlruns/              # MLflow experiment data
-├── shap/                # SHAP-related logic and visualizations
+│ ├── index.html
+│ ├── css/
+│ └── js/
+├── mlruns/ # MLflow experiment data
+├── shap/ # SHAP-related logic and visualizations
 └── README.md
-▶️ How to Run the Project
-Prerequisites
-Python 3.x
 
-Virtual environment recommended
 
-MLflow installed
+---
 
-Step-by-Step Execution
-Activate your virtual environment first.
+## How to Run the Project
 
-1️⃣ Start the CORS Proxy
+### Prerequisites
+- Python 3.x
+- Virtual environment (recommended)
+- MLflow installed
+
+---
+
+### Execution Steps
+
+Activate your virtual environment before running the commands below.
+
+#### 1. Start the CORS Proxy
+```bash
 python cors_proxy.py
-2️⃣ Start the Frontend Server
+
+#### 2. Start the Frontend Server
+```bash
 python3 -m http.server 8000
-3️⃣ Start the MLflow Tracking Server
+
+#### 3. Start the CORS Proxy
+```bash
 mlflow server --host 0.0.0.0 --port 5000
-🌐 Access the Application
-Open your browser and go to:
 
-[http://[::]:8000/](http://[::]:8000/
-)
-📈 How It Works (High-Level)
-Models are trained and logged using MLflow
+Access the Dashboard
+Open a web browser and navigate to:
+```bash
+http://[::]:8000/
 
-Experiment runs and metrics are stored in the MLflow backend
+System Workflow
+Machine learning models are trained and logged using MLflow
 
-The web dashboard fetches run data via MLflow APIs
+Experiment runs and evaluation metrics are stored in the MLflow tracking server
+
+The web dashboard retrieves run data via MLflow APIs
 
 Users can:
 
-Compare runs and identify the best model
+Compare multiple experiment runs
 
-View SHAP-based explainability results
+Identify the best-performing model
 
-SHAP visualizations help interpret feature contributions
+View SHAP-based explainability visualizations
 
-⚠️ Limitations
+Limitations
 MLflow Model Registry is not implemented
 
-Load testing was not performed
+Load testing was not conducted
 
-SHAP values are computed using an approximation approach, not full game-theoretic Shapley values
+SHAP values are calculated using an approximation approach rather than exact game-theoretic Shapley values
 
-The system is designed for academic evaluation and analysis, not production deployment
+The system is intended for academic evaluation and demonstration purposes only
 
-🔮 Future Improvements
+Future Improvements
 Integration with MLflow Model Registry
 
 Automated fairness evaluation
 
-Load testing and scalability analysis
+Load and performance testing
 
-Deployment using containerization (Docker)
+Containerized deployment (Docker)
 
-Enhanced SHAP visualizations and interactivity
-
-📌 Academic Note
-This project was developed as part of a final-year academic submission. The focus is on experiment tracking, model comparison, and explainability, demonstrating practical machine learning system design and evaluation.
-
-
+Enhanced explainability visualizations
