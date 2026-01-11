@@ -75,7 +75,8 @@ mlflow server --host 0.0.0.0 --port 5000
 🌐 Access the Application
 Open your browser and go to:
 
-http://[::]:8000/
+[http://[::]:8000/](http://[::]:8000/
+)
 📈 How It Works (High-Level)
 Models are trained and logged using MLflow
 
@@ -113,4 +114,5 @@ Enhanced SHAP visualizations and interactivity
 
 📌 Academic Note
 This project was developed as part of a final-year academic submission. The focus is on experiment tracking, model comparison, and explainability, demonstrating practical machine learning system design and evaluation.
+
 
