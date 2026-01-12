@@ -67,7 +67,6 @@ The scope of the project focuses on **analysis and evaluation**, not full produc
 ├── shap/ # SHAP-related logic and visualizations
 └── README.md
 
-
 ---
 
 ## How to Run the Project
@@ -101,7 +100,7 @@ mlflow server --host 0.0.0.0 --port 5000
 ## Access the Dashboard
 Open a web browser and navigate to:
 ```bash
-http://[::]:8000/
+http://localhost:8000/
 ```
 
 ## System Workflow
@@ -125,3 +124,4 @@ http://[::]:8000/
  - Load and performance testing
  - Containerized deployment (Docker)
  - Enhanced explainability visualizations
+
