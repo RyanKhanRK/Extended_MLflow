@@ -86,51 +86,42 @@ Activate your virtual environment before running the commands below.
 #### 1. Start the CORS Proxy
 ```bash
 python cors_proxy.py
+```
 
 #### 2. Start the Frontend Server
 ```bash
 python3 -m http.server 8000
+```
 
 #### 3. Start the CORS Proxy
 ```bash
 mlflow server --host 0.0.0.0 --port 5000
+```
 
-Access the Dashboard
+## Access the Dashboard
 Open a web browser and navigate to:
 ```bash
 http://[::]:8000/
+```
 
-System Workflow
-Machine learning models are trained and logged using MLflow
+## System Workflow
+1. Machine learning models are trained and logged using MLflow
+2. Experiment runs and evaluation metrics are stored in the MLflow tracking server
+3. The web dashboard retrieves run data via MLflow APIs
+4. Users can:
+ - Compare multiple experiment runs
+ - Identify the best-performing model
+ - View SHAP-based explainability visualizations
 
-Experiment runs and evaluation metrics are stored in the MLflow tracking server
+## Limitations
+ - MLflow Model Registry is not implemented
+ - Load testing was not conducted
+ - SHAP values are calculated using an approximation approach rather than exact game-theoretic Shapley values
+ - The system is intended for academic evaluation and demonstration purposes only
 
-The web dashboard retrieves run data via MLflow APIs
-
-Users can:
-
-Compare multiple experiment runs
-
-Identify the best-performing model
-
-View SHAP-based explainability visualizations
-
-Limitations
-MLflow Model Registry is not implemented
-
-Load testing was not conducted
-
-SHAP values are calculated using an approximation approach rather than exact game-theoretic Shapley values
-
-The system is intended for academic evaluation and demonstration purposes only
-
-Future Improvements
-Integration with MLflow Model Registry
-
-Automated fairness evaluation
-
-Load and performance testing
-
-Containerized deployment (Docker)
-
-Enhanced explainability visualizations
+## Future Improvements
+ - Integration with MLflow Model Registry
+ - Automated fairness evaluation
+ - Load and performance testing
+ - Containerized deployment (Docker)
+ - Enhanced explainability visualizations
